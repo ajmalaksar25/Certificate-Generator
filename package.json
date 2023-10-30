@@ -1,0 +1,30 @@
+{
+  "name": "certificate-generator",
+  "version": "1.0.0",
+  "description": "App to create certificates for CCC Events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "certificate",
+    "generator",
+    "project",
+    "webtech"
+  ],
+  "author": "Ajmal Aksar, Chris Thomas Varghese",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "canvas": "^2.11.2",
+    "csv-parser": "^3.0.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "fontkit": "^2.0.2",
+    "mongodb": "^6.2.0",
+    "mongoose": "^7.6.3",
+    "multer": "^1.4.5-lts.1",
+    "pdf-lib": "^1.17.1",
+    "socket.io": "^4.7.2"
+  }
+}
