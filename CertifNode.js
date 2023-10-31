@@ -7,7 +7,8 @@ async function createCertificate(
   eventName,
   studentName,
   registrationNumber,
-  date
+  date,
+  callback
 ) {
   // Convert registrationNumber to uppercase
   registrationNumber = registrationNumber.toUpperCase();
@@ -30,7 +31,7 @@ async function createCertificate(
   page.drawText(studentName, {
     x: xStudentName,
     y: 342,
-    size: fontSize,
+    size: 35,
     font: font,
     color: textColor,
   });
@@ -51,7 +52,8 @@ async function createCertificate(
     color: textColor,
   });
 
-  const outputFolder = "Outputs";
+  const outputFolder = "download";
+
   if (!fs.existsSync(outputFolder)) {
     fs.mkdirSync(outputFolder);
   }
@@ -59,7 +61,8 @@ async function createCertificate(
   const outputFile = path.join(outputFolder, `${registrationNumber}.pdf`);
   fs.writeFileSync(outputFile, await pdfDoc.save());
 
-  return outputFile;
+  // Invoke the callback function with the outputFile as an argument
+  callback(outputFile);
 }
 
 module.exports = {
